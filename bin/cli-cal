@@ -1,0 +1,71 @@
+#!/usr/bin/env node
+
+var fs = require('fs')
+var program = require('commander')
+var concat = require('concat-stream')
+var GitStatsColors = require('git-stats-colors')
+var graph = require('../index')
+
+program
+  .usage('[options] [data]')
+  .version(require('../package.json').version)
+  .option('-p, --no-ansi', 'Do not use ANSI colors in the squares')
+  .option('-t, --theme [name]', 'Used theme', 'DARK')
+  .parse(process.argv)
+
+var filename = program.args[0]
+
+// read input from file
+if (filename) {
+  fs.readFile(filename, 'utf8', function (err, raw) {
+    if (err) {
+      throw err
+    }
+
+    processRaw(raw)
+  })
+
+  return
+}
+
+// read input from stdin
+process.stdin.pipe(concat({ encoding: 'string' }, function (raw) {
+  processRaw(raw)
+}))
+
+function processRaw(raw) {
+  var days = formatInput(JSON.parse(raw))
+
+  var g = graph(days)
+  if (!program.noAnsi) {
+    g = GitStatsColors(g, program.theme)
+  }
+
+  console.log(g)
+}
+
+function formatInput(input) {
+  if (input instanceof Array) {
+    /**
+     * Example:
+     * [["2013/08/30",8],["2013/08/31",2],["2013/09/01",5],...]
+     */
+    
+    var obj = {}
+    input.forEach(function(el) {
+      obj[el[0]] = el[1]
+    })
+    return obj
+  }
+
+  /**
+   * Example:
+   * {
+   *   "2013/08/30": 8,
+   *   "2013/08/31": 2,
+   *   "2013/09/01": 5,
+   *   ...
+   * }
+   */
+  return input
+}

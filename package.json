@@ -1,0 +1,35 @@
+{
+  "name": "cli-cal",
+  "version": "1.0.0",
+  "description": "Github-like calendar graph for the CLI",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fnogatz/cli-cal"
+  },
+  "keywords": [
+    "cli",
+    "calendar",
+    "git-stats",
+    "graph"
+  ],
+  "author": "Falco Nogatz <fnogatz@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fnogatz/cli-cal/issues"
+  },
+  "homepage": "https://github.com/fnogatz/cli-cal",
+  "devDependencies": {
+    "standard": "^3.7.3"
+  },
+  "dependencies": {
+    "ansi-parser": "^1.4.0",
+    "cli-box": "^2.1.1",
+    "commander": "^2.8.1",
+    "concat-stream": "^1.4.8",
+    "git-stats-colors": "^1.0.0"
+  }
+}
