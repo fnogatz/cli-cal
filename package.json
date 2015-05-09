@@ -1,8 +1,9 @@
 {
   "name": "cli-cal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Github-like calendar graph for the CLI",
   "main": "index.js",
+  "bin": "./cli-cal",
   "scripts": {
     "test": "standard"
   },
