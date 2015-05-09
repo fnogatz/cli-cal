@@ -37,7 +37,7 @@ function processRaw(raw) {
   var days = formatInput(JSON.parse(raw))
 
   var g = graph(days)
-  if (!program.noAnsi) {
+  if (program.ansi) {
     g = GitStatsColors(g, program.theme)
   }
 
