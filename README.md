@@ -2,6 +2,8 @@
 
 Github-like calendar graph for the command line
 
+![Screenshot](screenshot.png)
+
 ## Installation
 
 ```bash
