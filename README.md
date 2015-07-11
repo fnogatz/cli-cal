@@ -1,6 +1,10 @@
 # cli-cal
 
-Github-like calendar graph for the command line
+Github-like calendar graph for the command line.
+
+**Deprecated:** Use [cli-gh-cal](https://github.com/IonicaBizau/cli-gh-cal) instead.
+
+This module has been created as an extract of [git-stats](https://github.com/IonicaBizau/git-stats). In the meantime ([#49](https://github.com/IonicaBizau/git-stats/issues/49#issuecomment-119532161)) [Ionică Bizău](https://github.com/IonicaBizau) created the standalone package [cli-gh-cal](https://github.com/IonicaBizau/cli-gh-cal) which should be used instead of this package.
 
 ![Screenshot](screenshot.png)
 
