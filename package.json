@@ -24,13 +24,13 @@
   },
   "homepage": "https://github.com/fnogatz/cli-cal",
   "devDependencies": {
-    "standard": "^3.7.3"
+    "standard": "^10.0.2"
   },
   "dependencies": {
-    "ansi-parser": "^1.4.0",
-    "cli-box": "^2.1.1",
+    "ansi-parser": "^3.2.7",
+    "cli-box": "^6.0.7",
     "commander": "^2.8.1",
     "concat-stream": "^1.4.8",
-    "git-stats-colors": "^1.0.0"
+    "git-stats-colors": "^2.3.10"
   }
 }
