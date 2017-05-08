@@ -1,5 +1,7 @@
 # cli-cal
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/fnogatz/cli-cal.svg)](https://greenkeeper.io/)
+
 Github-like calendar graph for the command line.
 
 **Deprecated:** Use [cli-gh-cal](https://github.com/IonicaBizau/cli-gh-cal) instead.
