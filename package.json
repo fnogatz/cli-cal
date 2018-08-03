@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/fnogatz/cli-cal",
   "devDependencies": {
-    "standard": "^3.7.3"
+    "standard": "^11.0.1"
   },
   "dependencies": {
     "ansi-parser": "^1.4.0",
