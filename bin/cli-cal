@@ -13,27 +13,29 @@ program
   .option('-t, --theme [name]', 'Used theme', 'DARK')
   .parse(process.argv)
 
-var filename = program.args[0]
+var filename = program.args[0];
 
-// read input from file
-if (filename) {
-  fs.readFile(filename, 'utf8', function (err, raw) {
-    if (err) {
-      throw err
-    }
+(function () {
+  // read input from file
+  if (filename) {
+    fs.readFile(filename, 'utf8', function (err, raw) {
+      if (err) {
+        throw err
+      }
 
+      processRaw(raw)
+    })
+
+    return
+  }
+
+  // read input from stdin
+  process.stdin.pipe(concat({ encoding: 'string' }, function (raw) {
     processRaw(raw)
-  })
+  }))
+})()
 
-  return
-}
-
-// read input from stdin
-process.stdin.pipe(concat({ encoding: 'string' }, function (raw) {
-  processRaw(raw)
-}))
-
-function processRaw(raw) {
+function processRaw (raw) {
   var days = formatInput(JSON.parse(raw))
 
   var g = graph(days)
@@ -44,15 +46,15 @@ function processRaw(raw) {
   console.log(g)
 }
 
-function formatInput(input) {
+function formatInput (input) {
   if (input instanceof Array) {
     /**
      * Example:
      * [["2013/08/30",8],["2013/08/31",2],["2013/09/01",5],...]
      */
-    
+
     var obj = {}
-    input.forEach(function(el) {
+    input.forEach(function (el) {
       obj[el[0]] = el[1]
     })
     return obj

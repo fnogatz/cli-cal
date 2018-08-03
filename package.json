@@ -5,7 +5,8 @@
   "main": "index.js",
   "bin": "./bin/cli-cal",
   "scripts": {
-    "test": "standard"
+    "standard": "standard && standard ./bin/*",
+    "test": "npm run standard"
   },
   "repository": {
     "type": "git",
